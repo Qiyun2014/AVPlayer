@@ -14,16 +14,19 @@ endif(CMAKE_COMPILER_IS_GNUCXX)
 # 引用第三库配置路径映射
 set(SRC_DIR ./)
 set(FFMPEG_DIR /usr/local/Cellar/ffmpeg/4.2.1_1)
+set(SDL_DIR /usr/local/Cellar/sdl2/2.0.10/)
 #set(libx265_DIR ./libs/libx265)
 
 
 # 引入到工程
 include_directories(
         ${FFMPEG_DIR}/include/
+        ${SDL_DIR}/include/
         #${libx265_DIR}/include
 )
 link_directories(
         ${FFMPEG_DIR}/lib/
+        ${SDL_DIR}/lib/
         #${libx265_DIR}/lib
 )
 
@@ -60,6 +63,7 @@ target_link_libraries(
         swresample
         swscale
 
+        SDL2.dylib
         #x265
 )
 

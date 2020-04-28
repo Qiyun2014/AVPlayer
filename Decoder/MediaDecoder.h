@@ -14,6 +14,8 @@ public:
 
     /* 解码函数回调 */
     void (*decode_frame) (AVFrame *out_frame, AVMediaType mediaType, double pts){};
+    /* 解码开始 */
+    void (*decode_start) (MediaDecoder *mediaDecoder){};
     /* 解码完成回调 */
     void (*decode_complete) (){};
 

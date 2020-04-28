@@ -35,7 +35,9 @@ void* MediaDecoder::decoder_thread(void *userdata) {
     AVPacket pkt, *packet = &pkt;
     int val = 0;
     AVMediaType mediaType = AVMEDIA_TYPE_UNKNOWN;
-
+    if (mediaParser->m_parse_class->bufferQueue == nullptr) {
+        return nullptr;
+    }
     while (!mediaParser->m_parse_class->is_completion_ || mediaParser->m_parse_class->bufferQueue->v_samples > 0) {
         pthread_mutex_lock(&mediaParser->m_parse_class->mutex);
         bool success = mediaParser->m_parse_class->bufferQueue->put(packet, &mediaType);
@@ -65,6 +67,10 @@ void* MediaDecoder::decoder_thread(void *userdata) {
                 double frame_duration = mediaParser->m_parse_class->GetDurationPerFrame(AVMEDIA_TYPE_VIDEO);
                 mediaParser->pts += frame_duration;
                 printf("************************  解码成功, 解码视频帧 -->  %.2f, 帧类型 = %d ... \n", mediaParser->pts, pic_type);
+                usleep(frame_duration * 1000 * 1000);
+                if (mediaParser->decode_frame != nullptr) {
+                    mediaParser->decode_frame(mediaParser->out_frame, AVMEDIA_TYPE_VIDEO, mediaParser->pts);
+                }
             } else if (mediaType == AVMEDIA_TYPE_AUDIO) {
                 printf("************************  解码成功, 解码音频帧 -->  %.2f ... \n", mediaParser->pts);
             }
@@ -73,6 +79,9 @@ void* MediaDecoder::decoder_thread(void *userdata) {
         pthread_mutex_unlock(&mediaParser->m_parse_class->mutex);
     }
     printf("************************  解码完成. .. \n");
+    if (mediaParser->decode_complete != nullptr) {
+        mediaParser->decode_complete();
+    }
     delete mediaParser->m_parse_class;
     return nullptr;
 }
@@ -91,6 +100,10 @@ MediaDecoder::~MediaDecoder() {
 void MediaDecoder::start_decode(avplayer::MediaManager* m_class) {
     MediaManager::start_decode(m_class);
     m_parse_class = m_class;
+
+    if (decode_start != nullptr) {
+        decode_start(this);
+    }
 
     //pthread_create(&m_class->pthread_[1], nullptr, decoder_thread, this);
     //pthread_join(m_class->pthread_[1], nullptr);

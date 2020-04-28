@@ -87,8 +87,9 @@ bool thread_control(MediaParser *mediaParser, int a_nums, int v_nums, pthread_mu
 
 void* MediaParser::parser_thread(void* threadHanlder) {
     auto *mediaParser = static_cast<MediaParser *>(threadHanlder);
-    if (mediaParser == nullptr)
+    if (mediaParser == nullptr || (mediaParser->v_codec_ctx_ == nullptr | mediaParser->a_codec_ctx_ == nullptr))
         return nullptr;
+
     AVPacket *packet = mediaParser->m_pkt_;
     int val = 0;
     if (mediaParser->has_video_track || mediaParser->has_audio_track) {
@@ -130,7 +131,12 @@ MediaParser::MediaParser(char *path /*, std::tuple<> tuple*/) {
 
     int val;
     avformat_network_init();
-    this->open_file_input(path);
+    val = this->open_file_input(path);
+    if (val < 0) {
+        printf("加载失败，文件路径有问题 = %s \n", path);
+        is_completion_ = true;
+        return ;
+    }
 
     // open the codec
     v_codec_ctx_ = CodecContextOnFormatContext(fmt_ctx, v_stream_index, true, &val);
