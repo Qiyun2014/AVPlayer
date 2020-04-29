@@ -177,6 +177,33 @@ Decoder/MediaParser.cpp.s:
 	$(MAKE) -f CMakeFiles/AVPlayer.dir/build.make CMakeFiles/AVPlayer.dir/Decoder/MediaParser.cpp.s
 .PHONY : Decoder/MediaParser.cpp.s
 
+Decoder/Render/SDLRender.o: Decoder/Render/SDLRender.cpp.o
+
+.PHONY : Decoder/Render/SDLRender.o
+
+# target to build an object file
+Decoder/Render/SDLRender.cpp.o:
+	$(MAKE) -f CMakeFiles/AVPlayer.dir/build.make CMakeFiles/AVPlayer.dir/Decoder/Render/SDLRender.cpp.o
+.PHONY : Decoder/Render/SDLRender.cpp.o
+
+Decoder/Render/SDLRender.i: Decoder/Render/SDLRender.cpp.i
+
+.PHONY : Decoder/Render/SDLRender.i
+
+# target to preprocess a source file
+Decoder/Render/SDLRender.cpp.i:
+	$(MAKE) -f CMakeFiles/AVPlayer.dir/build.make CMakeFiles/AVPlayer.dir/Decoder/Render/SDLRender.cpp.i
+.PHONY : Decoder/Render/SDLRender.cpp.i
+
+Decoder/Render/SDLRender.s: Decoder/Render/SDLRender.cpp.s
+
+.PHONY : Decoder/Render/SDLRender.s
+
+# target to generate assembly for a file
+Decoder/Render/SDLRender.cpp.s:
+	$(MAKE) -f CMakeFiles/AVPlayer.dir/build.make CMakeFiles/AVPlayer.dir/Decoder/Render/SDLRender.cpp.s
+.PHONY : Decoder/Render/SDLRender.cpp.s
+
 MessageQueue/DataBufferQueue.o: MessageQueue/DataBufferQueue.cpp.o
 
 .PHONY : MessageQueue/DataBufferQueue.o
@@ -246,6 +273,9 @@ help:
 	@echo "... Decoder/MediaParser.o"
 	@echo "... Decoder/MediaParser.i"
 	@echo "... Decoder/MediaParser.s"
+	@echo "... Decoder/Render/SDLRender.o"
+	@echo "... Decoder/Render/SDLRender.i"
+	@echo "... Decoder/Render/SDLRender.s"
 	@echo "... MessageQueue/DataBufferQueue.o"
 	@echo "... MessageQueue/DataBufferQueue.i"
 	@echo "... MessageQueue/DataBufferQueue.s"

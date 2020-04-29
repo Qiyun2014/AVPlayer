@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "AVPlayer.pdb"
   "CMakeFiles/AVPlayer.dir/Decoder/MediaDecoder.cpp.o"
   "CMakeFiles/AVPlayer.dir/Decoder/MediaParser.cpp.o"
+  "CMakeFiles/AVPlayer.dir/Decoder/Render/SDLRender.cpp.o"
   "CMakeFiles/AVPlayer.dir/MessageQueue/DataBufferQueue.cpp.o"
   "CMakeFiles/AVPlayer.dir/main.cpp.o"
 )

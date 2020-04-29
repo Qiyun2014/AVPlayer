@@ -48,7 +48,7 @@ add_executable(
         Decoder/MediaDecoder.h
 
         Decoder/MediaFormat_Desc.h
-)
+        Decoder/Render/SDLRender.cpp Decoder/Render/SDLRender.h)
 
 
 # 依赖库

@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/qiyun/CLionProjects/AVPlayer/Decoder/MediaDecoder.cpp" "/Users/qiyun/CLionProjects/AVPlayer/cmake-build-debug/CMakeFiles/AVPlayer.dir/Decoder/MediaDecoder.cpp.o"
   "/Users/qiyun/CLionProjects/AVPlayer/Decoder/MediaParser.cpp" "/Users/qiyun/CLionProjects/AVPlayer/cmake-build-debug/CMakeFiles/AVPlayer.dir/Decoder/MediaParser.cpp.o"
+  "/Users/qiyun/CLionProjects/AVPlayer/Decoder/Render/SDLRender.cpp" "/Users/qiyun/CLionProjects/AVPlayer/cmake-build-debug/CMakeFiles/AVPlayer.dir/Decoder/Render/SDLRender.cpp.o"
   "/Users/qiyun/CLionProjects/AVPlayer/MessageQueue/DataBufferQueue.cpp" "/Users/qiyun/CLionProjects/AVPlayer/cmake-build-debug/CMakeFiles/AVPlayer.dir/MessageQueue/DataBufferQueue.cpp.o"
   "/Users/qiyun/CLionProjects/AVPlayer/main.cpp" "/Users/qiyun/CLionProjects/AVPlayer/cmake-build-debug/CMakeFiles/AVPlayer.dir/main.cpp.o"
   )

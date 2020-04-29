@@ -87,7 +87,7 @@ bool thread_control(MediaParser *mediaParser, int a_nums, int v_nums, pthread_mu
 
 void* MediaParser::parser_thread(void* threadHanlder) {
     auto *mediaParser = static_cast<MediaParser *>(threadHanlder);
-    if (mediaParser == nullptr || (mediaParser->v_codec_ctx_ == nullptr | mediaParser->a_codec_ctx_ == nullptr))
+    if (mediaParser == nullptr)
         return nullptr;
 
     AVPacket *packet = mediaParser->m_pkt_;

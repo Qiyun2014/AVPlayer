@@ -74,6 +74,7 @@ void* MediaDecoder::decoder_thread(void *userdata) {
             } else if (mediaType == AVMEDIA_TYPE_AUDIO) {
                 printf("************************  解码成功, 解码音频帧 -->  %.2f ... \n", mediaParser->pts);
             }
+            av_frame_unref(mediaParser->out_frame);
         }
         av_packet_unref(packet);
         pthread_mutex_unlock(&mediaParser->m_parse_class->mutex);

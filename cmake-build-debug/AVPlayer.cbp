@@ -102,6 +102,12 @@
 		<Unit filename="/Users/qiyun/CLionProjects/AVPlayer/Decoder/MediaParser.h">
 			<Option target="AVPlayer"/>
 		</Unit>
+		<Unit filename="/Users/qiyun/CLionProjects/AVPlayer/Decoder/Render/SDLRender.cpp">
+			<Option target="AVPlayer"/>
+		</Unit>
+		<Unit filename="/Users/qiyun/CLionProjects/AVPlayer/Decoder/Render/SDLRender.h">
+			<Option target="AVPlayer"/>
+		</Unit>
 		<Unit filename="/Users/qiyun/CLionProjects/AVPlayer/MessageQueue/DataBufferQueue.cpp">
 			<Option target="AVPlayer"/>
 		</Unit>
