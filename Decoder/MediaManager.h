@@ -29,17 +29,14 @@ namespace avplayer {
         bool isPlaying{};
 
         /* Demux线程，解码线程 */
-        pthread_t  pthread_[3]{};
+        pthread_t  _pthread[3]{};
 
         /* 缓存队列 */
-        mq::DataBufferQueue *bufferQueue;
+        mq::DataBufferQueue *bufferQueue{};
 
         /* 线程锁 */
         pthread_cond_t cv{};
         pthread_mutex_t mutex{};
-
-        //std::future<void *> demux_thread;
-        //std::future<void *> decode_thread;
 
         virtual void* start_decode_thread(void*) {
             printf("父类解码 ...");

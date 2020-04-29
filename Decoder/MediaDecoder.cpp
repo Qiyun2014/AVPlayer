@@ -14,8 +14,8 @@ bool is_decode_sucess (int val, MediaDecoder *mediaParser) {
             break;
         case AVERROR_EOF:
             printf("************************ end of file ... \n");
-            avcodec_flush_buffers(mediaParser->m_parse_class->v_codec_ctx_);
-            avcodec_flush_buffers(mediaParser->m_parse_class->a_codec_ctx_);
+            avcodec_flush_buffers(mediaParser->m_parse_class->v_codec_ctx);
+            avcodec_flush_buffers(mediaParser->m_parse_class->a_codec_ctx);
             mediaParser->m_parse_class->is_completion_ = true;
             return false;
         case AVERROR(EINVAL):
@@ -29,6 +29,7 @@ bool is_decode_sucess (int val, MediaDecoder *mediaParser) {
     }
     return true;
 }
+
 
 void* MediaDecoder::decoder_thread(void *userdata) {
     auto *mediaParser = static_cast<MediaDecoder *>(userdata);
@@ -48,7 +49,7 @@ void* MediaDecoder::decoder_thread(void *userdata) {
             continue;
         }
         // 从缓存队列拿取包数据
-        AVCodecContext *codecContext = (mediaType == AVMEDIA_TYPE_VIDEO) ? mediaParser->m_parse_class->v_codec_ctx_ : mediaParser->m_parse_class->a_codec_ctx_;
+        AVCodecContext *codecContext = (mediaType == AVMEDIA_TYPE_VIDEO) ? mediaParser->m_parse_class->v_codec_ctx : mediaParser->m_parse_class->a_codec_ctx;
         val = avcodec_send_packet(codecContext, packet);
         if (!is_decode_sucess(val, mediaParser)) {
             pthread_mutex_unlock(&mediaParser->m_parse_class->mutex);
@@ -60,9 +61,8 @@ void* MediaDecoder::decoder_thread(void *userdata) {
                 mediaParser->pts = 0;
             }
             */
-            /* 帧类型，通常只有当存在B帧时，pts和dts就会不同。 */
+            // 帧类型，通常只有当存在B帧时，pts和dts就会不同。
             AVPictureType pic_type = mediaParser->out_frame->pict_type;
-            /* 计算pts */
             if (mediaType == AVMEDIA_TYPE_VIDEO) {
                 double frame_duration = mediaParser->m_parse_class->GetDurationPerFrame(AVMEDIA_TYPE_VIDEO);
                 mediaParser->pts += frame_duration;
@@ -93,10 +93,12 @@ MediaDecoder::MediaDecoder() {
     out_frame = av_frame_alloc();
 }
 
+
 MediaDecoder::~MediaDecoder() {
     av_packet_free(&out_pkt);
     av_frame_free(&out_frame);
 }
+
 
 void MediaDecoder::start_decode(avplayer::MediaManager* m_class) {
     MediaManager::start_decode(m_class);

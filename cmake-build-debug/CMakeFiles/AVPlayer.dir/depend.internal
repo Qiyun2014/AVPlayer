@@ -168,6 +168,9 @@ CMakeFiles/AVPlayer.dir/MessageQueue/DataBufferQueue.cpp.o
  /usr/local/Cellar/ffmpeg/4.2.1_1/include/libavutil/rational.h
  /usr/local/Cellar/ffmpeg/4.2.1_1/include/libavutil/samplefmt.h
  /usr/local/Cellar/ffmpeg/4.2.1_1/include/libavutil/version.h
+CMakeFiles/AVPlayer.dir/Utility/AVTimer.cpp.o
+ /Users/qiyun/CLionProjects/AVPlayer/Utility/AVTimer.cpp
+ /Users/qiyun/CLionProjects/AVPlayer/Utility/AVTimer.h
 CMakeFiles/AVPlayer.dir/main.cpp.o
  /Users/qiyun/CLionProjects/AVPlayer/Decoder/MediaDecoder.h
  /Users/qiyun/CLionProjects/AVPlayer/Decoder/MediaFormat_Desc.h
@@ -175,6 +178,7 @@ CMakeFiles/AVPlayer.dir/main.cpp.o
  /Users/qiyun/CLionProjects/AVPlayer/Decoder/MediaParser.h
  /Users/qiyun/CLionProjects/AVPlayer/Decoder/Render/SDLRender.h
  /Users/qiyun/CLionProjects/AVPlayer/MessageQueue/DataBufferQueue.h
+ /Users/qiyun/CLionProjects/AVPlayer/Utility/AVTimer.h
  /Users/qiyun/CLionProjects/AVPlayer/main.cpp
  /usr/local/Cellar/ffmpeg/4.2.1_1/include/libavcodec/avcodec.h
  /usr/local/Cellar/ffmpeg/4.2.1_1/include/libavcodec/version.h

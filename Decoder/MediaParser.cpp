@@ -46,7 +46,7 @@ int MediaParser::open_file_input(char* path) {
     for (int i = 0; i < fmt_ctx->nb_streams; i ++) {
         if (fmt_ctx->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_VIDEO) {
             v_stream_index = i;
-            m_stream_ = fmt_ctx->streams[v_stream_index];
+            m_stream = fmt_ctx->streams[v_stream_index];
         } else if (fmt_ctx->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_AUDIO) {
             a_stream_index = i;
         }
@@ -90,7 +90,7 @@ void* MediaParser::parser_thread(void* threadHanlder) {
     if (mediaParser == nullptr)
         return nullptr;
 
-    AVPacket *packet = mediaParser->m_pkt_;
+    AVPacket *packet = mediaParser->m_pkt;
     int val = 0;
     if (mediaParser->has_video_track || mediaParser->has_audio_track) {
         /* 通知注册类，开始解码 */
@@ -113,7 +113,7 @@ void* MediaParser::parser_thread(void* threadHanlder) {
                     // For audio track
                     mediaParser->bufferQueue->insert(packet, AVMEDIA_TYPE_AUDIO);
                 }
-                //av_packet_unref(packet);
+                // av_packet_unref(packet);
                 pthread_mutex_unlock(&mediaParser->mutex);
             } else {
                 usleep(50 * 1000);
@@ -139,14 +139,14 @@ MediaParser::MediaParser(char *path /*, std::tuple<> tuple*/) {
     }
 
     // open the codec
-    v_codec_ctx_ = CodecContextOnFormatContext(fmt_ctx, v_stream_index, true, &val);
-    a_codec_ctx_ = CodecContextOnFormatContext(fmt_ctx, a_stream_index, false, &val);
+    v_codec_ctx = CodecContextOnFormatContext(fmt_ctx, v_stream_index, true, &val);
+    a_codec_ctx = CodecContextOnFormatContext(fmt_ctx, a_stream_index, false, &val);
 
     /* initialize a condition variable */
     pthread_cond_init(&cv, &cattr);
     pthread_mutex_init(&mutex, &mattr);
 
-    m_pkt_ = (AVPacket *) av_malloc(sizeof(AVPacket));;
+    m_pkt = (AVPacket *) av_malloc(sizeof(AVPacket));;
     bufferQueue = new mq::DataBufferQueue();
 }
 
@@ -154,9 +154,9 @@ MediaParser::MediaParser(char *path /*, std::tuple<> tuple*/) {
 MediaParser::~MediaParser() {
     delete bufferQueue;
 
-    av_packet_free(&m_pkt_);
-    if (v_codec_ctx_ != nullptr) avcodec_free_context(&v_codec_ctx_);
-    if (a_codec_ctx_ != nullptr) avcodec_free_context(&a_codec_ctx_);
+    av_packet_free(&m_pkt);
+    if (v_codec_ctx != nullptr) avcodec_free_context(&v_codec_ctx);
+    if (a_codec_ctx != nullptr) avcodec_free_context(&a_codec_ctx);
 
     pthread_cond_destroy(&cv);
     pthread_mutex_destroy(&mutex);

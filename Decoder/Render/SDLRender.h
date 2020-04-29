@@ -18,6 +18,8 @@ class SDLRender {
 public:
     SDLRender(int width, int height);
     ~SDLRender();
+
+    // 直接渲染yuv420p格式图像
     void sdl_render_frame(AVFrame *frame);
 
 private:

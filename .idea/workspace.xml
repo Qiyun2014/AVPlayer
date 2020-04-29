@@ -12,16 +12,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e256e061-5553-4444-9d72-d5a45a786fb5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Decoder/Render/SDLRender.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Decoder/Render/SDLRender.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Utility/AVTimer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Utility/AVTimer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Decoder/MediaDecoder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/MediaDecoder.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Decoder/MediaDecoder.h" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/MediaDecoder.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Decoder/MediaFormat_Desc.h" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/MediaFormat_Desc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Decoder/MediaManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/MediaManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Decoder/MediaParser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/MediaParser.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Decoder/MediaParser.h" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/MediaParser.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Decoder/Render/SDLRender.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/Render/SDLRender.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Decoder/Render/SDLRender.h" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/Render/SDLRender.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MessageQueue/DataBufferQueue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MessageQueue/DataBufferQueue.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MessageQueue/DataBufferQueue.h" beforeDir="false" afterPath="$PROJECT_DIR$/MessageQueue/DataBufferQueue.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/AVPlayer" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/AVPlayer" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/AVPlayer.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/AVPlayer.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/Decoder/MediaDecoder.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/Decoder/MediaDecoder.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/Decoder/MediaParser.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/Decoder/MediaParser.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/Decoder/Render/SDLRender.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/Decoder/Render/SDLRender.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/MessageQueue/DataBufferQueue.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/MessageQueue/DataBufferQueue.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/build.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/depend.internal" afterDir="false" />
@@ -96,7 +108,7 @@
       <workItem from="1587696088471" duration="24436000" />
       <workItem from="1587948331289" duration="28653000" />
       <workItem from="1588034365055" duration="28314000" />
-      <workItem from="1588120924006" duration="3400000" />
+      <workItem from="1588120924006" duration="16525000" />
     </task>
     <servers />
   </component>
@@ -117,15 +129,6 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Decoder/MediaParser.cpp</url>
-          <line>94</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="this-&gt;header_-&gt;next" />

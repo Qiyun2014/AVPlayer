@@ -168,12 +168,16 @@ CMakeFiles/AVPlayer.dir/MessageQueue/DataBufferQueue.cpp.o: /usr/local/Cellar/ff
 CMakeFiles/AVPlayer.dir/MessageQueue/DataBufferQueue.cpp.o: /usr/local/Cellar/ffmpeg/4.2.1_1/include/libavutil/samplefmt.h
 CMakeFiles/AVPlayer.dir/MessageQueue/DataBufferQueue.cpp.o: /usr/local/Cellar/ffmpeg/4.2.1_1/include/libavutil/version.h
 
+CMakeFiles/AVPlayer.dir/Utility/AVTimer.cpp.o: ../Utility/AVTimer.cpp
+CMakeFiles/AVPlayer.dir/Utility/AVTimer.cpp.o: ../Utility/AVTimer.h
+
 CMakeFiles/AVPlayer.dir/main.cpp.o: ../Decoder/MediaDecoder.h
 CMakeFiles/AVPlayer.dir/main.cpp.o: ../Decoder/MediaFormat_Desc.h
 CMakeFiles/AVPlayer.dir/main.cpp.o: ../Decoder/MediaManager.h
 CMakeFiles/AVPlayer.dir/main.cpp.o: ../Decoder/MediaParser.h
 CMakeFiles/AVPlayer.dir/main.cpp.o: ../Decoder/Render/SDLRender.h
 CMakeFiles/AVPlayer.dir/main.cpp.o: ../MessageQueue/DataBufferQueue.h
+CMakeFiles/AVPlayer.dir/main.cpp.o: ../Utility/AVTimer.h
 CMakeFiles/AVPlayer.dir/main.cpp.o: ../main.cpp
 CMakeFiles/AVPlayer.dir/main.cpp.o: /usr/local/Cellar/ffmpeg/4.2.1_1/include/libavcodec/avcodec.h
 CMakeFiles/AVPlayer.dir/main.cpp.o: /usr/local/Cellar/ffmpeg/4.2.1_1/include/libavcodec/version.h

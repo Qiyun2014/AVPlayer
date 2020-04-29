@@ -21,6 +21,7 @@ public:
     // 加载本地或网络路径文件
     int open_file_input(char* path);
 
+    // 注册观察者
     void observer_register_obj(avplayer::MediaManager *obs) {
         m_observers.push_back(obs);
     };
@@ -38,8 +39,10 @@ public:
     // 解析线程
     static void* parser_thread(void* threadHanlder);
 
+    // 线程属性值
     pthread_condattr_t cattr{};
     pthread_mutexattr_t mattr{};
+
 private:
     std::list<avplayer::MediaManager *> m_observers;
 };

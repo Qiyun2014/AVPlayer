@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.15)
 project(AVPlayer)
 
+
 set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 # 判断编译器类型,如果是gcc编译器,则在编译选项中加入c++14支持
@@ -48,7 +50,7 @@ add_executable(
         Decoder/MediaDecoder.h
 
         Decoder/MediaFormat_Desc.h
-        Decoder/Render/SDLRender.cpp Decoder/Render/SDLRender.h)
+        Decoder/Render/SDLRender.cpp Decoder/Render/SDLRender.h Utility/AVTimer.cpp Utility/AVTimer.h)
 
 
 # 依赖库

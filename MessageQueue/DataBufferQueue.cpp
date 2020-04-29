@@ -24,8 +24,8 @@ namespace mq {
     bool DataBufferQueue::put(AVPacket *out_pkt, AVMediaType *out_type) {
         bool success = true;
         pthread_mutex_lock(&mutex);
-        if (header_->next) {
-            AVNode *nexNode = header_->next;
+        if (_header->next) {
+            AVNode *nexNode = _header->next;
             *out_pkt = nexNode->pkt;
             *out_type = nexNode->type;
             if (nexNode->type == AVMEDIA_TYPE_AUDIO) {
@@ -33,7 +33,7 @@ namespace mq {
             } else if (nexNode->type == AVMEDIA_TYPE_VIDEO) {
                 v_samples --;
             }
-            header_->next = nexNode->next;
+            _header->next = nexNode->next;
             delete nexNode;
         } else {
             *out_pkt = {nullptr};
@@ -46,11 +46,11 @@ namespace mq {
     }
 
     AVNode* DataBufferQueue::last_node() {
-        if (header_ == nullptr) {
+        if (_header == nullptr) {
             return nullptr;
         }
         a_samples = v_samples = 0;
-        AVNode *node = header_;
+        AVNode *node = _header;
         while (node->next != nullptr) {
             node = node->next;
             if (node->type == AVMEDIA_TYPE_AUDIO) {

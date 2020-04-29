@@ -231,6 +231,33 @@ MessageQueue/DataBufferQueue.cpp.s:
 	$(MAKE) -f CMakeFiles/AVPlayer.dir/build.make CMakeFiles/AVPlayer.dir/MessageQueue/DataBufferQueue.cpp.s
 .PHONY : MessageQueue/DataBufferQueue.cpp.s
 
+Utility/AVTimer.o: Utility/AVTimer.cpp.o
+
+.PHONY : Utility/AVTimer.o
+
+# target to build an object file
+Utility/AVTimer.cpp.o:
+	$(MAKE) -f CMakeFiles/AVPlayer.dir/build.make CMakeFiles/AVPlayer.dir/Utility/AVTimer.cpp.o
+.PHONY : Utility/AVTimer.cpp.o
+
+Utility/AVTimer.i: Utility/AVTimer.cpp.i
+
+.PHONY : Utility/AVTimer.i
+
+# target to preprocess a source file
+Utility/AVTimer.cpp.i:
+	$(MAKE) -f CMakeFiles/AVPlayer.dir/build.make CMakeFiles/AVPlayer.dir/Utility/AVTimer.cpp.i
+.PHONY : Utility/AVTimer.cpp.i
+
+Utility/AVTimer.s: Utility/AVTimer.cpp.s
+
+.PHONY : Utility/AVTimer.s
+
+# target to generate assembly for a file
+Utility/AVTimer.cpp.s:
+	$(MAKE) -f CMakeFiles/AVPlayer.dir/build.make CMakeFiles/AVPlayer.dir/Utility/AVTimer.cpp.s
+.PHONY : Utility/AVTimer.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -279,6 +306,9 @@ help:
 	@echo "... MessageQueue/DataBufferQueue.o"
 	@echo "... MessageQueue/DataBufferQueue.i"
 	@echo "... MessageQueue/DataBufferQueue.s"
+	@echo "... Utility/AVTimer.o"
+	@echo "... Utility/AVTimer.i"
+	@echo "... Utility/AVTimer.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

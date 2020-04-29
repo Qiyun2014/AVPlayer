@@ -114,6 +114,12 @@
 		<Unit filename="/Users/qiyun/CLionProjects/AVPlayer/MessageQueue/DataBufferQueue.h">
 			<Option target="AVPlayer"/>
 		</Unit>
+		<Unit filename="/Users/qiyun/CLionProjects/AVPlayer/Utility/AVTimer.cpp">
+			<Option target="AVPlayer"/>
+		</Unit>
+		<Unit filename="/Users/qiyun/CLionProjects/AVPlayer/Utility/AVTimer.h">
+			<Option target="AVPlayer"/>
+		</Unit>
 		<Unit filename="/Users/qiyun/CLionProjects/AVPlayer/main.cpp">
 			<Option target="AVPlayer"/>
 		</Unit>

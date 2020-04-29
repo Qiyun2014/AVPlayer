@@ -31,7 +31,7 @@ SDLRender::SDLRender(int width, int height) {
 }
 
 
-    void SDLRender::sdl_render_frame(AVFrame *frame) {
+void SDLRender::sdl_render_frame(AVFrame *frame) {
     SDL_Rect rect;
     if (frame && frame->data[0]) {
         rect.x = 0;

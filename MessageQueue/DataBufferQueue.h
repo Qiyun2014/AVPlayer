@@ -22,31 +22,30 @@ namespace mq {
             if (mutex.__sig == 0 && cond.__sig == 0) {
                 pthread_mutex_init(&mutex, nullptr);
                 pthread_cond_init(&cond, nullptr);
-                header_ = static_cast<AVNode *>(malloc(sizeof(AVNode)));
-                header_->idx = 0;
-                header_->pkt = {};
-                header_->type = AVMEDIA_TYPE_UNKNOWN;
-                header_->next = nullptr;
+                _header = static_cast<AVNode *>(malloc(sizeof(AVNode)));
+                _header->idx = 0;
+                _header->pkt = {};
+                _header->type = AVMEDIA_TYPE_UNKNOWN;
+                _header->next = nullptr;
             }
         }
         ~DataBufferQueue() {
             pthread_mutex_destroy(&mutex);
             pthread_cond_destroy(&cond);
-            while (header_->next != nullptr) {
-                if (header_->pkt.size > 0) {
-                    header_->idx = 0;
-                    header_->type = AVMEDIA_TYPE_UNKNOWN;
-                    av_packet_unref(&header_->pkt);
-                    header_ = header_->next;
+            while (_header->next != nullptr) {
+                if (_header->pkt.size > 0) {
+                    _header->idx = 0;
+                    _header->type = AVMEDIA_TYPE_UNKNOWN;
+                    av_packet_unref(&_header->pkt);
+                    _header = _header->next;
                 }
             }
-            delete header_;
+            delete _header;
         }
 
     private:
         DataBufferQueue(__const DataBufferQueue &);
-        AVNode    *header_{};
-
+        AVNode    *_header{};
         // Mutex lock
         pthread_mutex_t mutex{};
         pthread_cond_t cond{};
@@ -58,7 +57,6 @@ namespace mq {
         void insert(AVPacket *pkt, AVMediaType type);
         bool put(AVPacket *out_pkt, AVMediaType *out_type);
         AVNode* last_node();
-
         uint32_t a_samples = 0, v_samples = 0;
     };
 
