@@ -61,4 +61,16 @@ namespace mq {
         }
         return node;
     }
+
+    void DataBufferQueue::clear() {
+        if (_header == nullptr) return;
+        while (_header->next != nullptr) {
+            if (_header->pkt.size > 0) {
+                _header->idx = 0;
+                _header->type = AVMEDIA_TYPE_UNKNOWN;
+                av_packet_unref(&_header->pkt);
+                _header = _header->next;
+            }
+        }
+    }
 }

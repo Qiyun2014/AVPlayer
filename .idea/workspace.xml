@@ -13,18 +13,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e256e061-5553-4444-9d72-d5a45a786fb5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Decoder/MediaDecoder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/MediaDecoder.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Decoder/MediaFormat_Desc.h" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/MediaFormat_Desc.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Decoder/MediaManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/MediaManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Decoder/MediaParser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Decoder/MediaParser.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/AVPlayer" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/AVPlayer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/Decoder/MediaDecoder.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/Decoder/MediaDecoder.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/Decoder/MediaParser.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/Decoder/MediaParser.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/MessageQueue/DataBufferQueue.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/MessageQueue/DataBufferQueue.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AVPlayer.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MessageQueue/DataBufferQueue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MessageQueue/DataBufferQueue.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MessageQueue/DataBufferQueue.h" beforeDir="false" afterPath="$PROJECT_DIR$/MessageQueue/DataBufferQueue.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +82,7 @@
       <workItem from="1588145480601" duration="5968000" />
       <workItem from="1588207692354" duration="667000" />
       <workItem from="1588230442600" duration="792000" />
-      <workItem from="1588552744268" duration="965000" />
+      <workItem from="1588552744268" duration="1708000" />
     </task>
     <servers />
   </component>

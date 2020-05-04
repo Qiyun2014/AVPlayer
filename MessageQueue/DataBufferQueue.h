@@ -32,14 +32,7 @@ namespace mq {
         ~DataBufferQueue() {
             pthread_mutex_destroy(&mutex);
             pthread_cond_destroy(&cond);
-            while (_header->next != nullptr) {
-                if (_header->pkt.size > 0) {
-                    _header->idx = 0;
-                    _header->type = AVMEDIA_TYPE_UNKNOWN;
-                    av_packet_unref(&_header->pkt);
-                    _header = _header->next;
-                }
-            }
+            clear();
             delete _header;
         }
 
@@ -49,14 +42,19 @@ namespace mq {
         // Mutex lock
         pthread_mutex_t mutex{};
         pthread_cond_t cond{};
+        AVNode* last_node();
     public:
         static DataBufferQueue & GetInstance() {
             static DataBufferQueue dataBufferQueueInstances;
             return dataBufferQueueInstances;
         }
+        // 填充新的packet数据到链表
         void insert(AVPacket *pkt, AVMediaType type);
+        // 获取头节点后的第一个packet数据包
         bool put(AVPacket *out_pkt, AVMediaType *out_type);
-        AVNode* last_node();
+        // 清理缓存数据
+        void clear();
+        // 当前链表中，音视频数据包的存储数量
         uint32_t a_samples = 0, v_samples = 0;
     };
 
