@@ -3,7 +3,6 @@
 //
 
 #include <tuple>
-#include <time.h>
 #include <zconf.h>
 #include "MediaParser.h"
 #include "../MessageQueue/DataBufferQueue.h"
@@ -43,12 +42,12 @@ int MediaParser::open_file_input(char* path) {
         has_audio_track = 1;
     }
 
-    for (int i = 0; i < fmt_ctx->nb_streams; i ++) {
+    for (unsigned int i = 0; i < fmt_ctx->nb_streams; i ++) {
         if (fmt_ctx->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_VIDEO) {
-            v_stream_index = i;
+            v_stream_index = (int) i;
             m_stream = fmt_ctx->streams[v_stream_index];
         } else if (fmt_ctx->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_AUDIO) {
-            a_stream_index = i;
+            a_stream_index = (int) i;
         }
     }
     return (has_audio_track | has_video_track);
@@ -71,10 +70,9 @@ AVCodecContext *CodecContextOnFormatContext(AVFormatContext *fmt_ctx, int stream
 }
 
 
-bool thread_control(MediaParser *mediaParser, int a_nums, int v_nums, pthread_mutex_t *mutex, pthread_cond_t *cond,
-                    double limit_time) {
+bool thread_control(MediaParser *mediaParser, int a_nums, int v_nums, pthread_mutex_t *mutex, pthread_cond_t *cond, double limit_time) {
     /* 存在视频轨道，计算所有视频帧需要播放的时间，否则将以音频帧数计算播放时间 */
-    double_t duration = mediaParser->has_video_track ? (1.0 / mediaParser->GetFPS()) * v_nums : (mediaParser->GetAudioFrameOfSize()) * a_nums;
+    double_t duration = mediaParser->has_video_track ? (1.0 / mediaParser->get_fps()) * v_nums : (mediaParser->GetAudioFrameOfSize()) * a_nums;
     printf("视频帧数 = %d, 音频帧数 = %d,  帧可播放时长 = %.2f \n", v_nums, a_nums, duration);
     if (duration > limit_time) {
         printf("线程等待 ...... \n");
@@ -113,13 +111,13 @@ void* MediaParser::parser_thread(void* threadHanlder) {
                     // For audio track
                     mediaParser->bufferQueue->insert(packet, AVMEDIA_TYPE_AUDIO);
                 }
-                // av_packet_unref(packet);
                 pthread_mutex_unlock(&mediaParser->mutex);
             } else {
                 usleep(50 * 1000);
                 printf("-----------------------------------------------------------  线程等待 \n");
             }
         }
+        av_packet_unref(packet);
         mediaParser->is_completion_ = true;
         printf("文件中媒体数据读取完成 .....  \n");
     }
@@ -128,7 +126,6 @@ void* MediaParser::parser_thread(void* threadHanlder) {
 
 
 MediaParser::MediaParser(char *path /*, std::tuple<> tuple*/) {
-
     int val;
     avformat_network_init();
     val = this->open_file_input(path);

@@ -64,7 +64,7 @@ void* MediaDecoder::decoder_thread(void *userdata) {
             // 帧类型，通常只有当存在B帧时，pts和dts就会不同。
             AVPictureType pic_type = mediaParser->out_frame->pict_type;
             if (mediaType == AVMEDIA_TYPE_VIDEO) {
-                double frame_duration = mediaParser->m_parse_class->GetDurationPerFrame(AVMEDIA_TYPE_VIDEO);
+                double frame_duration = mediaParser->m_parse_class->get_duration_per_frame(AVMEDIA_TYPE_VIDEO);
                 mediaParser->pts += frame_duration;
                 printf("************************  解码成功, 解码视频帧 -->  %.2f, 帧类型 = %d ... \n", mediaParser->pts, pic_type);
                 usleep(frame_duration * 1000 * 1000);

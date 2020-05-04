@@ -35,7 +35,7 @@ int main() {
 
 
     // SDL图像渲染
-    render = new SDLRender(mediaParser->GetPixelsOfWidth(), mediaParser->GetPixelsOfHeight());
+    render = new SDLRender(mediaParser->get_pixels_width(), mediaParser->get_pixels_height());
     auto dec_frame = [](AVFrame *out_frame, AVMediaType mediaType, double pts) {
         render->sdl_render_frame(out_frame);
     };

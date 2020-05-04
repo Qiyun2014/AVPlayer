@@ -26,6 +26,7 @@ include_directories(
         ${SDL_DIR}/include/
         #${libx265_DIR}/include
 )
+
 link_directories(
         ${FFMPEG_DIR}/lib/
         ${SDL_DIR}/lib/
