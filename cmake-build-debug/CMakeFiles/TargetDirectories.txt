@@ -1,3 +1,3 @@
-/Users/qiyun/CLionProjects/AVPlayer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/qiyun/CLionProjects/AVPlayer/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/qiyun/CLionProjects/AVPlayer/cmake-build-debug/CMakeFiles/AVPlayer.dir
+/Users/qiyun/AVPlayer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/qiyun/AVPlayer/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/qiyun/AVPlayer/cmake-build-debug/CMakeFiles/AVPlayer.dir

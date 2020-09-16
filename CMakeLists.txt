@@ -15,8 +15,8 @@ endif(CMAKE_COMPILER_IS_GNUCXX)
 
 # 引用第三库配置路径映射
 set(SRC_DIR ./)
-set(FFMPEG_DIR /usr/local/Cellar/ffmpeg/4.2.1_1)
-set(SDL_DIR /usr/local/Cellar/sdl2/2.0.10/)
+set(FFMPEG_DIR /usr/local/Cellar/ffmpeg/4.2.3_1)
+set(SDL_DIR /usr/local/Cellar/sdl2/2.0.12_1/)
 #set(libx265_DIR ./libs/libx265)
 
 

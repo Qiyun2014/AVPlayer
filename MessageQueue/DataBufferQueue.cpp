@@ -4,6 +4,13 @@
 
 #include "DataBufferQueue.h"
 
+extern "C" {
+#include <libavcodec/avcodec.h>
+#include <libavformat/avformat.h>
+#include <libavutil/avutil.h>
+#include <libavresample/avresample.h>
+}
+
 namespace mq {
 
     void DataBufferQueue::insert(AVPacket *pkt, AVMediaType type) {
@@ -68,7 +75,7 @@ namespace mq {
             if (_header->pkt.size > 0) {
                 _header->idx = 0;
                 _header->type = AVMEDIA_TYPE_UNKNOWN;
-                av_packet_unref(&_header->pkt);
+//                av_packet_unref(&(_header->pkt));
                 _header = _header->next;
             }
         }

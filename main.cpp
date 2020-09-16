@@ -14,7 +14,7 @@ void timer_callback() {
 int main() {
 
     std::cout << "Hello, World!" << std::endl;
-    std::string str("/Users/qiyun/Desktop/example_output.h265");
+    std::string str("/Users/qiyun/Desktop/JJTM2837.mov");
     // std::string str("/Users/qiyun/Desktop/example.mp4");
 
 
